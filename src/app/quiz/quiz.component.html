@@ -1,0 +1,16 @@
+
+<mat-card>
+
+  <button mat-raised-button color="primary" (click)="newGame()">Nouvelle partie</button>
+</mat-card>
+
+<div style="text-align:center">
+  <h2>
+Liste des pays du quizz  </h2>
+  <ul *ngFor="let question of questionsList">
+    <li>
+      <h3>Capitale :{{question.capitale}}, Continent: {{question.continent}}, Pays: {{question.pays}}</h3>
+    </li>
+  </ul>
+
+</div>

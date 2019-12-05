@@ -1,0 +1,32 @@
+<app-score></app-score>
+<div *ngIf="numQuestion == 0">
+  Question n°1
+</div>
+<div *ngIf="numQuestion != 0">
+  Question n°{{numQuestion}}
+
+</div>
+<br />
+<br />
+<app-timer></app-timer>
+<br />
+<br />
+Quelle est la capitale de ce pays : {{question.pays}} ?
+<br />
+<br />
+
+<div *ngIf="numQuestion < 10">
+
+<button mat-raised-button color="primary" (click)="getNextQuestion()">{{question.capitale}}</button>
+<br /><br />
+<div *ngFor="let capital of randomCapitals">
+  <button mat-raised-button color="primary" (click)="getNextQuestion()">{{capital.capitale}}</button>
+  <br /><br />
+</div>
+</div>
+<div *ngIf="numQuestion == 10">
+  <button mat-raised-button color="primary" (click)="accueil()">Fin du quizz.</button>
+
+</div>
+
+
